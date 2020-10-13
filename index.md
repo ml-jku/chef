@@ -9,9 +9,12 @@ usemathjax: true
 
 <link rel="stylesheet" href="assets/css/accordion.css">
 
+This blog post explains the paper [Cross-Domain Few-Shot Learning by Representation Fusion](https://arxiv.org/abs/2009.14108).  
+
 <p align="center">
   <img src="assets/Chef_icon.svg" alt="CHEF" width="360" class="center"/>
 </p>
+
 
 # Cross-domain few-shot learning
 
@@ -41,7 +44,7 @@ challenging.
 
 We consider domain shifts of different sizes. 
 [*mini*Imagenet](https://arxiv.org/abs/1606.04080) is a standard 
-few-shot data set that has a small domain shift between training and test set. 
+few-shot data set that has a **small domain shift** between training and test set. 
 While the sets of classes in these two data sets are disjoint, the classes 
 in these sets might be very similar, like, e.g. different dog breeds. Further, 
 we consider [*tiered*Imagenet](https://arxiv.org/abs/1803.00676), 
@@ -50,14 +53,14 @@ where the split was made such that the sets of classes in training set and
 test set are less similar. However, also the domain shift in *tiered*Imagenet 
 is rather small. 
 
-The main purpose of our work, however, is to tackle large domain shifts. 
+The main purpose of our work, however, is to tackle **large domain shifts**. 
 For that, training on Imagenet or a subset of Imagenet is considered. 
 The resulting models are evaluated on the 
 [cross-domain few-shot learning benchmark](https://arxiv.org/abs/1912.07200) 
 that consists of specific datasets like images of plant diseases,
 from satellites, of skin lesions, 
 or X-rays. To also explore domains other than images, we investigate 
-domain shifts in drug design tasks. Such experiments can help to utilize 
+**domain shifts in drug design tasks**. Such experiments can help to utilize 
 models for designing drugs for new diseases like COVID19. 
 
 ![](assets/domain_shift.png)
@@ -93,15 +96,15 @@ stop working. A network which was trained to classify animals will
 have high-level features to recognize things like legs, eyes, fur textures, 
 etc. If this network is now used to classify buildings it will barely 
 encounter these kinds of objects anymore. This, however, does not mean 
-that the network activations do not bare any useful information about the 
+that the network layers do not bare any useful information about the 
 new task. Only to get to this information we might have to dig deeper into 
 the network structure. 
 
-CHEF combines feature activations from layers of different levels of 
+CHEF combines features from layers of different levels of 
 abstraction. So even when the high-level representations crumble features of 
 lower layers can take over and still allow for a decent prediction result. 
-We call this concept **representation fusion**. It allows us to flexibly 
-choose the right level of abstraction for the few-shot task at hand
+We call this concept **representation fusion**. It allows a flexible 
+choice of the right level of abstraction for the few-shot task at hand
 depending on the size of its domain shift. 
 We implement representation fusion using an ensemble of Hebbian learners 
 operating on distinct representation levels in parallel. The results of 
@@ -157,10 +160,10 @@ first.
 ## Combining multiple Hebbian learners
 
 As stated above, we apply the Hebbian learning rule to different layers of 
-a deep neural network in parallel so as to perform learning on different 
+a deep neural network in parallel, and thus perform learning on different 
 levels of abstraction. Each of these learners yields a (possibly different) 
 prediction for the current few-shot task. We implement 
-**representation fusion** by summing over these predictions in logit space. 
+**representation fusion** by summing over these predictions in the logit space. 
 
 Let us consider $$L$$ different layers of a deep neural network. 
 Let $$\mathbf{z}_i^{(\ell)}$$ be the activation of the $$\ell$$-th layer by 
@@ -169,11 +172,9 @@ which we denote $$\mathbf{W}^{(\ell)}$$. We obtain the final prediction by
 
 $$\mathbf{u}_{\text{final}} = \sum_{\ell=1}^L \mathbf{W}^{(\ell)} \mathbf{z}_i^{(\ell)}.$$
 
-For instance, we use the 
-[ResNet-18 from PyTorch](https://pytorch.org/docs/stable/torchvision/models.html#torchvision.models.resnet18), 
-which was pretrained on Imagenet. We test this network on the four domains 
+CHEF is tested on the four domains 
 proposed as 
-[cross-domain few-shot learning benchmark](https://arxiv.org/abs/1912.07200)
+[cross-domain few-shot learning benchmark](https://arxiv.org/abs/1912.07200):
 
  * [CropDiseases](https://www.kaggle.com/saroz014/plant-disease/), images of plant diseases
  * [EuroSAT](http://madm.dfki.de/downloads), satellite images
@@ -186,6 +187,11 @@ The following table summarizes the results of a ResNet-10 trained on
 
 ![](assets/results.png)
 
+We now want to go one step further and investigate how good the cross-domain few-shot
+predictions get if the features of the pretrained model get better.
+For that, we use the 
+[ResNet-18 from PyTorch](https://pytorch.org/docs/stable/torchvision/models.html#torchvision.models.resnet18), 
+which was pretrained on the full Imagenet dataset.
 We investigate the performance of the Hebbian learners in different layers of 
 the ResNet-18 (blue) and compare it to the ensemble performance (yellow), i.e. 
 the predictions of the different layers combined into 
@@ -200,7 +206,16 @@ Imagenet dataset while the ResNet-10 was only trained on a small subset.
 Further, we can see that the features of lower layers become more important 
 the greater the gap to the training domain. This confirms the intuition that 
 high-level features are more specific to the original domain. As the domain 
-gap gets large the learner resorts to more general low-level features. 
+gap gets large the learner resorts to more general low-level features.
+
+# Outlook
+In this blog post, the cross-domain few-shot learning benchmark datasets are used to showcase the working principle of CHEF.
+But CHEF also performs well on all other tested datasets, e.g. on the *mini*Imagenet and the *tiered*Imagenet datasets.
+In our paper, we further considered 50-shot cross-domain few-shot learning settings in the field of toxicity prediction,
+where around 50 available measurements is a typical scenario when a new high-quality assay is introduced in drug design.
+Here, CHEF significantly outperforms all traditional approaches demonstrating great potential for applications in computational drug discovery.
+There are many more tasks few-shot tasks out where CHEF and the concept of representation fusion can be applied.
+It is up to you to test it out :)
 
 # Links
 
