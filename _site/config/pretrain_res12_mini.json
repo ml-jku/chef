@@ -1,0 +1,13 @@
+{
+  "gpu": [0],
+  "batch_size": 256,
+  "lr": 0.01,
+  "momentum": 0.9,
+  "weight_decay": 0.0001,
+  "epochs": 500,
+  "seed": 0,
+  "dropout": 0.1,
+  "num_workers": 4,
+  "backbone": "res12",
+  "dataset": "miniimagenet"
+}

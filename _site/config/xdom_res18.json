@@ -1,0 +1,13 @@
+{
+  "gpu": [0],
+  "n": 1,
+  "k": 5,
+  "q": 5,
+  "inner_val_steps": 120,
+  "hebb_lr": 0.001,
+  "meta_batch_size": 1,
+  "eval_batches": 800,
+  "seed": 0,
+  "num_workers": 8
+}
+

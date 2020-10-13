@@ -1,0 +1,18 @@
+{
+  "gpu": [0],
+  "backbone": "conv64",
+  "dataset": "miniimagenet",
+  "dropout": 0.5,
+  "n": 1,
+  "k": 5,
+  "q": 5,
+  "inner_train_steps": 100,
+  "inner_val_steps": 100,
+  "inner_lr": 0.01,
+  "hebb_lr": 0.01,
+  "meta_batch_size": 1,
+  "eval_batches": 800,
+  "num_workers": 4,
+  "seed": 0,
+  "model_path": "/path/to/pretrained/model.pth"
+    }
