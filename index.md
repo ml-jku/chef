@@ -211,10 +211,10 @@ gap gets large the learner resorts to more general low-level features.
 # Outlook
 In this blog post, the cross-domain few-shot learning benchmark datasets are used to showcase the working principle of CHEF.
 But CHEF also performs well on all other tested datasets, e.g. on the *mini*Imagenet and the *tiered*Imagenet datasets.
-In our paper, we further considered 50-shot cross-domain few-shot learning settings in the field of toxicity prediction,
-where around 50 available measurements is a typical scenario when a new high-quality assay is introduced in drug design.
+To demonstrate a real-world application, in the paper we further considered 50-shot cross-domain settings in the field of toxicity prediction.
+Around 50 available measurements is a typical scenario when a new high-quality assay is introduced in drug design.
 Here, CHEF significantly outperforms all traditional approaches demonstrating great potential for applications in computational drug discovery.
-There are many more tasks few-shot tasks out where CHEF and the concept of representation fusion can be applied.
+There are many more few-shot tasks where CHEF and the concept of representation fusion can be applied.
 It is up to you to test it out :)
 
 # Links
