@@ -9,7 +9,7 @@ usemathjax: true
 
 <link rel="stylesheet" href="assets/css/accordion.css">
 
-This blog post explains the paper [Cross-Domain Few-Shot Learning by Representation Fusion](https://arxiv.org/abs/2009.14108).  
+This blog post explains the few-shot learning method **CHEF** introduced in the paper [Cross-Domain Few-Shot Learning by Representation Fusion](https://arxiv.org/abs/2009.14108).  
 
 <p align="center">
   <img src="assets/Chef_icon.svg" alt="CHEF" width="360" class="center"/>
@@ -214,7 +214,7 @@ But CHEF also performs well on all other tested datasets, e.g. on the *mini*Imag
 To demonstrate a real-world application, in the paper we further considered 50-shot cross-domain settings in the field of toxicity prediction.
 Around 50 available measurements is a typical scenario when a new high-quality assay is introduced in drug design.
 Here, CHEF significantly outperforms all traditional approaches demonstrating great potential for applications in computational drug discovery.
-There are many more few-shot tasks where CHEF and the concept of representation fusion can be applied.
+However, there are many more few-shot tasks out there, to which CHEF and the concept of representation fusion can be applied. 
 It is up to you to test it out :)
 
 # Links
