@@ -125,8 +125,6 @@ represented by $$N$$ samples. Hence, our few-shot dataset has the form
 $$\{(\mathbf{x}_i, \mathbf{y}_i)\}_{i=1}^{NK}$$, where $$\mathbf{x}_i$$
 are the inputs and $$\mathbf{y}_i$$ are the labels indicating class membership.
 
-![](assets/hebb.png)
-
 Let $$\mathbf{z}_i \in \mathbb{R}^D$$ be a feature 
 vector obtained from activating the backbone network with a sample 
 $$\mathbf{x}_i$$ up to a certain layer, where $$D$$ is the number of 
