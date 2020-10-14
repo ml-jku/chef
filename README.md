@@ -1,5 +1,5 @@
 # CHEF
-Cross-domain few-shot learning by representation fusion
+[Cross-domain few-shot learning by representation fusion](https://arxiv.org/abs/2010.06498)
 
 # Download and prepare data
 
