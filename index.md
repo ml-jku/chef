@@ -9,7 +9,7 @@ usemathjax: true
 
 <link rel="stylesheet" href="assets/css/accordion.css">
 
-This blog post explains the few-shot learning method **CHEF** introduced in the paper [Cross-Domain Few-Shot Learning by Representation Fusion](https://arxiv.org/abs/2009.14108).  
+This blog post explains the few-shot learning method **CHEF** introduced in the paper [Cross-Domain Few-Shot Learning by Representation Fusion](https://arxiv.org/abs/2010.06498).  
 
 <p align="center">
   <img src="assets/Chef_icon.svg" alt="CHEF" width="360" class="center"/>
@@ -217,7 +217,7 @@ It is up to you to test it out :)
 
 # Links
 
-Paper: [Cross-Domain Few-Shot Learning by Representation Fusion](https://arxiv.org/abs/2009.14108)  
+Paper: [Cross-Domain Few-Shot Learning by Representation Fusion](https://arxiv.org/abs/2010.06498)  
 Code: [github.com/adler-jku/chef](https://github.com/adler-jku/chef) 
 
 # Correspondence
