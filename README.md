@@ -1,6 +1,9 @@
 # CHEF
 Cross-domain few-shot learning by representation fusion
 
+[paper](https://arxiv.org/abs/2010.06498), 
+[blog](https://ml-jku.github.io/chef/)
+
 # Download and prepare data
 
 ## miniImagenet
