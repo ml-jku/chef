@@ -8,6 +8,7 @@
   "meta_batch_size": 1,
   "eval_batches": 800,
   "seed": 0,
-  "num_workers": 8
+  "num_workers": 8,
+  "feature_index": [-1, 59, 52, 45, 38, 31]
 }
 

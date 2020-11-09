@@ -44,7 +44,7 @@ To test the pre-trained ResNet-10 on the four cross-domain data sets run
 `python3 xdom_res10.py config/xdom_res10.json --dataset {isic,cropdisease,eurosat,chest}`. 
 To test the Imagenet-pre-trained ResNet-18 from PyTorch on the four 
 cross-domain data sets run 
-`python3 xdom_res10.py config/xdom_res18.json --dataset {isic,cropdisease,eurosat,chest}`. 
+`python3 xdom_res18.py config/xdom_res18.json --dataset {isic,cropdisease,eurosat,chest}`. 
 Without the `--dataset` option, the model will be run on the miniImagenet test 
 set by default. 
 
